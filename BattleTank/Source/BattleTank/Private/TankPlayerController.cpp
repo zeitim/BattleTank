@@ -3,10 +3,19 @@
 #include "BattleTank.h"
 #include "TankPlayerController.h"
 
+//tick
+	//super
+	//aim towardscrooshair()
+
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	UE_LOG(LogTemp, Warning, TEXT("Tick"));
+}
+
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, TEXT("Player Controller begin play"));
 	auto ControlledTank = GetControlledTank();
 	if (!ControlledTank)
 	{
